@@ -25,4 +25,6 @@ client/tmp
 client/.clang-format
 client/.editorformat
 client/.npmignore
+client/.editorconfig
+client/.travis.yml
 
