@@ -39,6 +39,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+        <dependency>
+            <groupId>com.martinetherton</groupId>
+            <artifactId>optimizer</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.martinetherton</groupId>
+            <artifactId>aima-core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
 	</dependencies>
 
 	<build>
