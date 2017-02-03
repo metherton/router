@@ -6,6 +6,7 @@
   "repository": "https://github.com/angular/material-start",
   "license": "MIT",
   "devDependencies": {
+    "grunt": "^1.0.1",
     "live-server": "0.9.1",
     "tsd": "0.6.5",
     "typescript": "1.7.5"

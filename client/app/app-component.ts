@@ -16,6 +16,7 @@
     selected = null;
     users = [];
 
+
     constructor(
       private userService,
       private $mdSidenav: ng.material.ISidenavService,
