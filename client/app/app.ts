@@ -2,6 +2,6 @@
 
   'use strict';
 
-  const AppModule = angular.module( 'myApp', [ 'ngMaterial', 'users', 'shareContact','userDetail' ] );
+  const AppModule = angular.module( 'myApp', [ 'ngMaterial', 'users', 'shareContact','userDetail', 'routeadvices'] );
 
 })();

@@ -14,7 +14,8 @@
   "scripts": {
     "postinstall": "tsd reinstall -so",
     "prestart": "npm update",
-    "start": "tsc -w & cd app && live-server --no-browser --mount='/node_modules':'../node_modules' --mount='/built':'../built' --mount='/app':'../app'"
+    "start": "tsc -w & cd app && live-server --no-browser --mount='/node_modules':'../node_modules' --mount='/built':'../built' --mount='/app':'../app'",
+    "test": "karma start ./unit-tests/karma.conf.js"
   },
   "dependencies": {
     "angular": "1.4.8",
