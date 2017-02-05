@@ -11,9 +11,9 @@
     static $inject = ['$http', '$q'];
     constructor(private $http: ng.IHttpService, private $q: ng.IQService) {}
 
-    getRouteAdvice():ng.IPromise<any> {
+    getRouteAdvice(start, end):ng.IPromise<any> {
       var defer = this.$q.defer();
-      this.$http.get('the url').success((data:any) => {
+      this.$http.get('http://localhost:8080/routeAdvices/' + start + "/" + end).success((data:any) => {
         defer.resolve(data);
       });
       return defer.promise

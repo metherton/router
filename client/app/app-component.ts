@@ -15,6 +15,12 @@
 
     selected = null;
     users = [];
+    startPoints = [];
+    endPoints = [];
+    waypoints = [];
+    startPoint = null;
+    endPoint = null;
+    showSpinner = false;
 
 
     constructor(
@@ -22,11 +28,18 @@
       private $mdSidenav: ng.material.ISidenavService,
       private $mdBottomSheet: ng.material.IBottomSheetService,
       private $log: ng.ILogService,
-      private $scope: ng.IScope
+      private $scope: ng.IScope,
+      private routeAdviceService
     ) {}
 
     ngOnInit() {
       // Load all registered users
+
+       this.startPoints = [{coords: "44.5_-36.0"},{coords: "44.5_-36.0"} ,{coords: "44.5_-36.0"} ,{coords: "44.5_-36.0"},{coords: "44.5_-36.0"}   ];
+       this.endPoints = [{coords: "106.0_-17.5"},{coords: "44.5_-36.0"} ,{coords: "44.5_-36.0"} ,{coords: "44.5_-36.0"}  ];
+       this.startPoint = undefined;
+       this.endPoint = undefined;
+       this.showSpinner = false;
 
       this.userService
         .loadAllUsers()
@@ -34,6 +47,23 @@
           this.users = [].concat( users );
           this.selected = users[ 0 ];
         } );
+    }
+
+    planRoute() {
+
+      this.showSpinner = true;
+      
+      this.routeAdviceService.getRouteAdvice(this.startPoint, this.endPoint).then((routeAdvice) => {
+        this.waypoints = routeAdvice.waypoints;
+        this.showSpinner = false;
+      });
+
+      // this.selected = angular.isNumber( userId )
+      //   ? this.users[ userId ]
+      //   : userId;
+      //
+      // this.toggleUsersList();
+
     }
 
     /**
