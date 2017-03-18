@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { CityService } from './services/city.service';
 import { AppComponent } from './app.component';
 import { AppRoutingComponent } from './app-routing/app-routing.component';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
