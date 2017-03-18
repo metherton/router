@@ -1,0 +1,14 @@
+<md-card>
+  <md-card-title>{{title}}</md-card-title>
+  <md-card-content>
+    <md-list>
+      <md-list-item><md-select id="start" [(ngModel)]="startCity" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select></md-list-item>
+    </md-list>
+    <md-list>
+      <md-list-item><md-select id="end" [(ngModel)]="endCity" placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select></md-list-item>
+    </md-list>
+    <md-list>
+      {{startCity}}&nbsp;{{endCity}}
+    </md-list>
+  </md-card-content>
+</md-card>
