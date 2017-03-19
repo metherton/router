@@ -7,11 +7,13 @@ import { CityService } from './services/city.service';
 import { AppComponent } from './app.component';
 import { AppRoutingComponent } from './app-routing/app-routing.component';
 import 'hammerjs';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppRoutingComponent
+    AppRoutingComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
