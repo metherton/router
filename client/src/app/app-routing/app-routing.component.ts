@@ -20,9 +20,10 @@ export class AppRoutingComponent implements OnInit {
 
   public cities: Promise<any[]>;
   public title: string;
-  public startCity: City;
-  public endCity: City;
+  // public startCity: City;
+  // public endCity: City;
   public model = new RouteRequest(new City('','',''), new City('','',''));
+  
   public resetFormHack: boolean;
 
   constructor(private cityService: CityService) { }

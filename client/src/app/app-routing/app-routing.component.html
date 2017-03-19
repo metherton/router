@@ -3,35 +3,18 @@
     <md-card-title>{{title}}</md-card-title>
     <md-card-content>
       <md-list>
-        <md-list-item><md-select id="start" [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select></md-list-item>
+        <md-list-item><md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{startCitySpy.className}}</md-list-item>
       </md-list>
       <md-list>
-        <md-list-item><md-select id="end" [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select></md-list-item>
+        <md-list-item><md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{endCitySpy.className}}</md-list-item>
       </md-list>
+      <!--<md-list [hidden]="endCity.valid || endCity.pristine" class="alert alert-danger">-->
+        <!--{{!routeForm.form.valid}} Required - {{model.startCity}}&nbsp;{{model.endCity}}-->
+      <!--</md-list>-->
       <md-list>
-        {{model.startCity}}&nbsp;{{model.endCity}}
-      </md-list>
-      <md-list>
-        <button md-raised-button [disabled]="!routeForm.form.valid" >Plan Route</button>
+        <button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button>
       </md-list>
     </md-card-content>
   </md-card>
 </form>
 
-<!--<form *ngIf="resetFormHack" (ngSubmit)="login()" #loginForm="ngForm">-->
-  <!--<div class="form-group">-->
-    <!--<label for="username">Username</label>-->
-    <!--<input type="text" class="form-control" required [(ngModel)]="model.username" name="username" #usernameSpy #username="ngModel">-->
-    <!--{{usernameSpy.className}}-->
-    <!--<div [hidden]="username.valid || username.pristine" class="alert alert-danger">Required</div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<label for="password">Password</label>-->
-    <!--<input type="password" class="form-control" required [(ngModel)]="model.password" name="password" #passwordSpy #password="ngModel">-->
-    <!--{{passwordSpy.className}}-->
-    <!--<div [hidden]="password.valid || password.pristine" class="alert alert-danger">Required</div>-->
-  <!--</div>-->
-  <!--<button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid">-->
-    <!--Login-->
-  <!--</button>-->
-<!--</form>-->
