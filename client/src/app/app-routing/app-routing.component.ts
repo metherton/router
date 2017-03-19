@@ -6,6 +6,11 @@ export class City {
   }
 }
 
+export class RouteRequest {
+  constructor(public startCity: City, public endCity: City) {
+  }
+}
+
 @Component({
   selector: 'app-routing',
   templateUrl: './app-routing.component.html',
@@ -17,13 +22,23 @@ export class AppRoutingComponent implements OnInit {
   public title: string;
   public startCity: City;
   public endCity: City;
+  public model = new RouteRequest(new City('','',''), new City('','',''));
+  public resetFormHack: boolean;
 
   constructor(private cityService: CityService) { }
 
   ngOnInit() {
+    this.resetFormHack = true;
     this.title = "Routing Application";
   //  this.cities = this.cityService.getCities().then(cities => this.cities = cities);
     this.cities = this.cityService.getCities();
+  }
+
+  planRoute() {
+    console.log('Plan route with', this.model.startCity, this.model.endCity);
+    this.model = new RouteRequest(new City('','',''), new City('','',''));
+    this.resetFormHack = false;
+    setTimeout(() => this.resetFormHack = true, 0);
   }
 
 }
