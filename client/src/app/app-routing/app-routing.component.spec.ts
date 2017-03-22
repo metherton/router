@@ -1,4 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppRoutingComponent } from './app-routing.component';
@@ -10,9 +11,10 @@ describe('App Routing Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppRoutingComponent ],
+      imports: [FormsModule],
+      declarations: [ AppRoutingComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [{provide: CityService, useValue: {getCities: jasmine.createSpy('getCities')}}]
+      providers: [{provide: CityService, useValue: {getCities: jasmine.createSpy('getCities ')}}]
     })
       .compileComponents();
   }));
