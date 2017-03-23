@@ -18,14 +18,12 @@ describe('App Routing Component', () => {
 
   beforeEach(async(() => {
 
-
-
     TestBed.configureTestingModule({
       imports: [FormsModule],
       declarations: [ AppRoutingComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [{provide: CityService, useValue: {getCities: jasmine.createSpy('getCities')}},
-        {provide: RouteAdviceService, useValue: {getRouteAdvice: jasmine.createSpy('getRouteAdvice')}}]
+        {provide: RouteAdviceService, useValue: {getRouteAdvice: jasmine.createSpy('getRouteAdvice').and.returnValue(Promise.resolve({waypoints: ['1','2']}))}}]
     })
       .compileComponents();
 
