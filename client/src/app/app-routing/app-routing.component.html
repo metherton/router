@@ -18,3 +18,12 @@
   </md-card>
 </form>
 
+
+<md-card *ngIf="showWaypoints">
+  <md-card-title>Waypoints</md-card-title>
+  <md-card-content>
+    <md-list>
+      <md-list-item *ngFor="let waypoint of waypoints | async">{{waypoint}}</md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>

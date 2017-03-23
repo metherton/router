@@ -20,24 +20,28 @@ export class RouteRequest {
 export class AppRoutingComponent implements OnInit {
 
   public cities: Promise<any[]>;
+  public waypoints: Promise<any[]>;
   public title: string;
   // public startCity: City;
   // public endCity: City;
   public model = new RouteRequest(new City('','',''), new City('','',''));
 
   public resetFormHack: boolean;
+  public showWaypoints: boolean;
 
   constructor(private cityService: CityService, private routeAdviceService: RouteAdviceService) { }
 
   ngOnInit() {
     this.resetFormHack = true;
+    this.showWaypoints = false;
     this.title = "Routing Application";
   //  this.cities = this.cityService.getCities().then(cities => this.cities = cities);
     this.cities = this.cityService.getCities();
   }
 
   planRoute() {
-    this.routeAdviceService.getRouteAdvice('-73.5_40.0', '139.5_35.0');
+    this.waypoints = this.routeAdviceService.getRouteAdvice('-73.5_40.0', '139.5_35.0').then(routeAdvice => routeAdvice.waypoints);
+    this.showWaypoints = true;
     console.log('Plan route with', this.model.startCity, this.model.endCity);
     this.model = new RouteRequest(new City('','',''), new City('','',''));
     this.resetFormHack = false;
@@ -46,8 +50,3 @@ export class AppRoutingComponent implements OnInit {
 
 }
 
-//
-//   this.players = this.leaderboardService.getPlayers()
-//     .then(leaderboard => leaderboard.map(r => this.playerService.getPlayer(r)))
-//     .then(players => Promise.all(players));
-// }
