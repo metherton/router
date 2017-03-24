@@ -1,12 +1,12 @@
 webpackJsonp([1,4],{
 
-/***/ 384:
+/***/ 395:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(400);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(418);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CityService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -29,7 +29,7 @@ var CityService = (function () {
         return this.http.get("/data/cities.json").toPromise().then(function (response) { return response.json(); });
     };
     CityService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
     ], CityService);
     return CityService;
@@ -39,13 +39,13 @@ var CityService = (function () {
 
 /***/ }),
 
-/***/ 385:
+/***/ 396:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(400);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(418);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RouteAdviceService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -68,7 +68,7 @@ var RouteAdviceService = (function () {
         return this.http.get("http://localhost:8080/routeAdvices/" + start + "/" + end).toPromise().then(function (response) { return response.json(); });
     };
     RouteAdviceService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
     ], RouteAdviceService);
     return RouteAdviceService;
@@ -78,7 +78,7 @@ var RouteAdviceService = (function () {
 
 /***/ }),
 
-/***/ 407:
+/***/ 425:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -87,41 +87,42 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 407;
+webpackEmptyContext.id = 425;
 
 
 /***/ }),
 
-/***/ 408:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(534);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(556);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(574);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(576);
 
 
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
 
-/***/ 554:
+/***/ 572:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_city_service__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_route_advice_service__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_city_service__ = __webpack_require__(395);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_route_advice_service__ = __webpack_require__(396);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* unused harmony export City */
 /* unused harmony export RouteRequest */
+/* unused harmony export Waypoint */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -150,6 +151,13 @@ var RouteRequest = (function () {
     }
     return RouteRequest;
 }());
+var Waypoint = (function () {
+    function Waypoint(longitude, latitude) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
+    return Waypoint;
+}());
 var AppRoutingComponent = (function () {
     function AppRoutingComponent(cityService, routeAdviceService) {
         this.cityService = cityService;
@@ -157,6 +165,8 @@ var AppRoutingComponent = (function () {
         // public startCity: City;
         // public endCity: City;
         this.model = new RouteRequest(new City('', '', ''), new City('', '', ''));
+        this.lat = 51.678418;
+        this.lng = 7.809007;
     }
     AppRoutingComponent.prototype.ngOnInit = function () {
         this.resetFormHack = true;
@@ -165,9 +175,13 @@ var AppRoutingComponent = (function () {
         //  this.cities = this.cityService.getCities().then(cities => this.cities = cities);
         this.cities = this.cityService.getCities();
     };
+    AppRoutingComponent.prototype.convert = function (waypoint) {
+        var tup = waypoint.split("_");
+        return new Waypoint(tup[0], tup[1]);
+    };
     AppRoutingComponent.prototype.planRoute = function () {
         var _this = this;
-        this.waypoints = this.routeAdviceService.getRouteAdvice('-73.5_40.0', '139.5_35.0').then(function (routeAdvice) { return routeAdvice.waypoints; });
+        this.waypoints = this.routeAdviceService.getRouteAdvice('-73.5_40.0', '139.5_35.0').then(function (routeAdvice) { return routeAdvice.waypoints.map(function (w) { return _this.convert(w); }); });
         this.showWaypoints = true;
         console.log('Plan route with', this.model.startCity, this.model.endCity);
         this.model = new RouteRequest(new City('', '', ''), new City('', '', ''));
@@ -175,10 +189,10 @@ var AppRoutingComponent = (function () {
         setTimeout(function () { return _this.resetFormHack = true; }, 0);
     };
     AppRoutingComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Q" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'app-routing',
-            template: __webpack_require__(618),
-            styles: [__webpack_require__(613)]
+            template: __webpack_require__(641),
+            styles: [__webpack_require__(636)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_city_service__["a" /* CityService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__services_city_service__["a" /* CityService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_route_advice_service__["a" /* RouteAdviceService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_route_advice_service__["a" /* RouteAdviceService */]) === 'function' && _b) || Object])
     ], AppRoutingComponent);
@@ -189,7 +203,7 @@ var AppRoutingComponent = (function () {
 
 /***/ }),
 
-/***/ 555:
+/***/ 573:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -210,10 +224,10 @@ var AppComponent = (function () {
         this.title = 'app works!';
     }
     AppComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(619),
-            styles: [__webpack_require__(614)]
+            template: __webpack_require__(642),
+            styles: [__webpack_require__(637)]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -223,22 +237,24 @@ var AppComponent = (function () {
 
 /***/ }),
 
-/***/ 556:
+/***/ 574:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_city_service__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_route_advice_service__ = __webpack_require__(385);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_routing_app_routing_component__ = __webpack_require__(554);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_hammerjs__ = __webpack_require__(616);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__(536);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_city_service__ = __webpack_require__(395);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_route_advice_service__ = __webpack_require__(396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(573);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_routing_app_routing_component__ = __webpack_require__(572);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_hammerjs__ = __webpack_require__(639);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__test_test_component__ = __webpack_require__(557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__test_test_component__ = __webpack_require__(575);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core__ = __webpack_require__(579);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -260,11 +276,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__app_routing_app_routing_component__["a" /* AppRoutingComponent */],
@@ -274,7 +291,10 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MaterialModule */]
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MaterialModule */],
+                __WEBPACK_IMPORTED_MODULE_11_angular2_google_maps_core__["AgmCoreModule"].forRoot({
+                    apiKey: 'AIzaSyA-XiHqcr56619BrW1PZYzaTFnXVaMT6PY'
+                })
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_5__services_city_service__["a" /* CityService */], __WEBPACK_IMPORTED_MODULE_6__services_route_advice_service__["a" /* RouteAdviceService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
@@ -287,7 +307,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 557:
+/***/ 575:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -309,10 +329,10 @@ var TestComponent = (function () {
     TestComponent.prototype.ngOnInit = function () {
     };
     TestComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-test',
-            template: __webpack_require__(620),
-            styles: [__webpack_require__(615)]
+            template: __webpack_require__(643),
+            styles: [__webpack_require__(638)]
         }), 
         __metadata('design:paramtypes', [])
     ], TestComponent);
@@ -322,7 +342,7 @@ var TestComponent = (function () {
 
 /***/ }),
 
-/***/ 558:
+/***/ 576:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -338,10 +358,28 @@ var environment = {
 
 /***/ }),
 
-/***/ 613:
+/***/ 636:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(69)();
+exports = module.exports = __webpack_require__(70)();
+// imports
+
+
+// module
+exports.push([module.i, ".sebm-google-map-container {\n  height: 500px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 637:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(70)();
 // imports
 
 
@@ -356,10 +394,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 614:
+/***/ 638:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(69)();
+exports = module.exports = __webpack_require__(70)();
 // imports
 
 
@@ -374,52 +412,34 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 615:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(69)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 618:
+/***/ 641:
 /***/ (function(module, exports) {
 
-module.exports = "<form *ngIf=\"resetFormHack\" (ngSubmit)=\"planRoute()\" #routeForm=\"ngForm\">\n  <md-card>\n    <md-card-title>{{title}}</md-card-title>\n    <md-card-content>\n      <md-list>\n        <md-list-item><md-select id=\"start\" required [(ngModel)]=\"model.startCity\" name=\"startCity\" #startCitySpy #startCity=\"ngModel\" placeholder=\"Start\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city.name\">{{city.name}}</md-option></md-select>{{startCitySpy.className}}</md-list-item>\n      </md-list>\n      <md-list>\n        <md-list-item><md-select id=\"end\" required [(ngModel)]=\"model.endCity\" name=\"endCity\" #endCitySpy #endCity=\"ngModel\"  placeholder=\"End\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city.name\">{{city.name}}</md-option></md-select>{{endCitySpy.className}}</md-list-item>\n      </md-list>\n      <!--<md-list [hidden]=\"endCity.valid || endCity.pristine\" class=\"alert alert-danger\">-->\n        <!--{{!routeForm.form.valid}} Required - {{model.startCity}}&nbsp;{{model.endCity}}-->\n      <!--</md-list>-->\n      <md-list>\n        <button md-raised-button [disabled]=\"!routeForm.form.valid || startCity.pristine  || endCity.pristine\" >Plan Route</button>\n      </md-list>\n    </md-card-content>\n  </md-card>\n</form>\n\n\n<md-card *ngIf=\"showWaypoints\">\n  <md-card-title>Waypoints</md-card-title>\n  <md-card-content>\n    <md-list>\n      <md-list-item *ngFor=\"let waypoint of waypoints | async\">{{waypoint}}</md-list-item>\n    </md-list>\n  </md-card-content>\n</md-card>\n"
+module.exports = "<form *ngIf=\"resetFormHack\" (ngSubmit)=\"planRoute()\" #routeForm=\"ngForm\">\n    <md-grid-list cols=\"8\">\n      <md-grid-tile>\n        <md-select id=\"start\" required [(ngModel)]=\"model.startCity\" name=\"startCity\" #startCitySpy #startCity=\"ngModel\" placeholder=\"Start\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city.name\">{{city.name}}</md-option></md-select>{{startCitySpy.className}}\n      </md-grid-tile>\n      <md-grid-tile>\n        <md-select id=\"end\" required [(ngModel)]=\"model.endCity\" name=\"endCity\" #endCitySpy #endCity=\"ngModel\"  placeholder=\"End\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city.name\">{{city.name}}</md-option></md-select>{{endCitySpy.className}}\n      </md-grid-tile>\n      <md-grid-tile>\n        <button md-raised-button [disabled]=\"!routeForm.form.valid || startCity.pristine  || endCity.pristine\" >Plan Route</button>\n      </md-grid-tile>\n    </md-grid-list>\n</form>\n<md-card *ngIf=\"showWaypoints\">\n  <md-card-title>Waypoints</md-card-title>\n  <md-card-content>\n    <md-list>\n      <md-list-item *ngFor=\"let waypoint of waypoints | async\">{{waypoint.longitude}}:{{waypoint.latitude}}</md-list-item>\n    </md-list>\n  </md-card-content>\n</md-card>\n\n<sebm-google-map [latitude]=\"lat\" [longitude]=\"lng\">\n  <sebm-google-map-marker  *ngFor=\"let waypoint of waypoints | async\"  [latitude]=\"waypoint.latitude\" [longitude]=\"waypoint.longitude\"></sebm-google-map-marker>\n</sebm-google-map>\n\n\n"
 
 /***/ }),
 
-/***/ 619:
+/***/ 642:
 /***/ (function(module, exports) {
 
 module.exports = "<app-routing></app-routing>\n"
 
 /***/ }),
 
-/***/ 620:
+/***/ 643:
 /***/ (function(module, exports) {
 
 module.exports = "<p>\n  test works!\n</p>\n"
 
 /***/ }),
 
-/***/ 669:
+/***/ 692:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(408);
+module.exports = __webpack_require__(426);
 
 
 /***/ })
 
-},[669]);
+},[692]);
 //# sourceMappingURL=main.bundle.js.map

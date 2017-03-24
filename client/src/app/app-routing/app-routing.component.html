@@ -1,29 +1,27 @@
 <form *ngIf="resetFormHack" (ngSubmit)="planRoute()" #routeForm="ngForm">
-  <md-card>
-    <md-card-title>{{title}}</md-card-title>
-    <md-card-content>
-      <md-list>
-        <md-list-item><md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{startCitySpy.className}}</md-list-item>
-      </md-list>
-      <md-list>
-        <md-list-item><md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{endCitySpy.className}}</md-list-item>
-      </md-list>
-      <!--<md-list [hidden]="endCity.valid || endCity.pristine" class="alert alert-danger">-->
-        <!--{{!routeForm.form.valid}} Required - {{model.startCity}}&nbsp;{{model.endCity}}-->
-      <!--</md-list>-->
-      <md-list>
+    <md-grid-list cols="8">
+      <md-grid-tile>
+        <md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{startCitySpy.className}}
+      </md-grid-tile>
+      <md-grid-tile>
+        <md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{endCitySpy.className}}
+      </md-grid-tile>
+      <md-grid-tile>
         <button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button>
-      </md-list>
-    </md-card-content>
-  </md-card>
+      </md-grid-tile>
+    </md-grid-list>
 </form>
+<!--<md-card *ngIf="showWaypoints">-->
+  <!--<md-card-title>Waypoints</md-card-title>-->
+  <!--<md-card-content>-->
+    <!--<md-list>-->
+      <!--<md-list-item *ngFor="let waypoint of waypoints | async">{{waypoint.longitude}}:{{waypoint.latitude}}</md-list-item>-->
+    <!--</md-list>-->
+  <!--</md-card-content>-->
+<!--</md-card>-->
+
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+  <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async"  [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
+</sebm-google-map>
 
 
-<md-card *ngIf="showWaypoints">
-  <md-card-title>Waypoints</md-card-title>
-  <md-card-content>
-    <md-list>
-      <md-list-item *ngFor="let waypoint of waypoints | async">{{waypoint}}</md-list-item>
-    </md-list>
-  </md-card-content>
-</md-card>

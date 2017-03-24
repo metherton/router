@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingComponent } from './app-routing/app-routing.component';
 import 'hammerjs';
 import { TestComponent } from './test/test.component';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { TestComponent } from './test/test.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA-XiHqcr56619BrW1PZYzaTFnXVaMT6PY'
+    })
   ],
   providers: [CityService, RouteAdviceService],
   bootstrap: [AppComponent]
