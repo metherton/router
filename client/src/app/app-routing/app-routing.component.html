@@ -1,10 +1,10 @@
 <form *ngIf="resetFormHack" (ngSubmit)="planRoute()" #routeForm="ngForm">
     <md-grid-list cols="8">
       <md-grid-tile>
-        <md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{startCitySpy.className}}
+        <md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{startCitySpy.className}}
       </md-grid-tile>
       <md-grid-tile>
-        <md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city.name">{{city.name}}</md-option></md-select>{{endCitySpy.className}}
+        <md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{endCitySpy.className}}
       </md-grid-tile>
       <md-grid-tile>
         <button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button>
@@ -20,8 +20,9 @@
   <!--</md-card-content>-->
 <!--</md-card>-->
 
-<sebm-google-map [latitude]="lat" [longitude]="lng">
+<sebm-google-map [latitude]="0" [longitude]="0" [zoom]="2">
   <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async"  [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
+  <!--<sebm-google-map-marker  *ngFor="let waypoint of waypoints | async"  [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>  -->
 </sebm-google-map>
 
 

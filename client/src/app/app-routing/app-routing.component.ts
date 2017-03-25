@@ -5,9 +5,7 @@ import { Component, OnInit } from '@angular/core';
 export class City {
   constructor(public name: string, public latitude: string, public longitude: string) {
   }
-  getWaypoint() {
-    return this.longitude + "_" + this.latitude;
-  }
+
 }
 
 export class RouteRequest {
@@ -16,7 +14,7 @@ export class RouteRequest {
 }
 
 export class Waypoint {
-  constructor(public longitude: string, public latitude: string) {}
+  constructor(public longitude: Number, public latitude: Number) {}
 }
 
 @Component({
@@ -50,13 +48,20 @@ export class AppRoutingComponent implements OnInit {
 
   convert(waypoint: string) {
     let tup = waypoint.split("_");
-    return new Waypoint(tup[0], tup[1]);
+    return new Waypoint(Number(tup[0]), Number(tup[1]));
+  }
+
+  convertCityToWaypoint(city: City) {
+    return city.longitude + "_" + city.latitude;
   }
 
   planRoute() {
-    this.waypoints = this.routeAdviceService.getRouteAdvice(this.model.startCity.getWaypoint(), this.model.endCity.getWaypoint()).then(routeAdvice => routeAdvice.waypoints.map(w => this.convert(w)));
-    this.showWaypoints = true;
-    console.log('Plan route with', this.model.startCity.getWaypoint(), this.model.endCity.getWaypoint());
+    this.lat = this.model.startCity.latitude;
+    this.lng = this.model.startCity.longitude;
+    this.waypoints = this.routeAdviceService.getRouteAdvice(this.convertCityToWaypoint(this.model.startCity), this.convertCityToWaypoint(this.model.endCity)).then(routeAdvice => routeAdvice.waypoints.map(w => this.convert(w)));
+    //this.waypoints = Promise.resolve([{lat: '38.0', lng: '150.0'}, {lat: '47.0', lng: '-67.0'}]);
+
+    console.log('Plan route with', this.convertCityToWaypoint(this.model.startCity), this.convertCityToWaypoint(this.model.endCity));
     this.model = new RouteRequest(new City('','',''), new City('','',''));
     this.resetFormHack = false;
     setTimeout(() => this.resetFormHack = true, 0);
