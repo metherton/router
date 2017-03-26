@@ -13,6 +13,14 @@ export class RouteRequest {
   }
 }
 
+//public OptimalRouteAdvice(List<String> waypoints, int timeDuration, int fuelCost, int timeCost, int pathCost) {
+
+
+  export class RouteAdvice {
+    constructor(public waypoints: Waypoint[], public timeDuration: Number, public fuelCost: Number, public pathCost: Number) {
+  }
+}
+
 export class Waypoint {
   constructor(public longitude: Number, public latitude: Number) {}
 }
@@ -24,6 +32,7 @@ export class Waypoint {
 })
 export class AppRoutingComponent implements OnInit {
 
+  public routeAdvice: Promise<RouteAdvice>
   public waypointCount: number;
   public cities: Promise<any[]>;
   public waypoints: Promise<any[]>;
