@@ -122,6 +122,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* unused harmony export City */
 /* unused harmony export RouteRequest */
+/* unused harmony export RouteAdvice */
 /* unused harmony export Waypoint */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -150,6 +151,16 @@ var RouteRequest = (function () {
         this.endCity = endCity;
     }
     return RouteRequest;
+}());
+//public OptimalRouteAdvice(List<String> waypoints, int timeDuration, int fuelCost, int timeCost, int pathCost) {
+var RouteAdvice = (function () {
+    function RouteAdvice(waypoints, timeDuration, fuelCost, pathCost) {
+        this.waypoints = waypoints;
+        this.timeDuration = timeDuration;
+        this.fuelCost = fuelCost;
+        this.pathCost = pathCost;
+    }
+    return RouteAdvice;
 }());
 var Waypoint = (function () {
     function Waypoint(longitude, latitude) {

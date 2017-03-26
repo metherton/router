@@ -32,7 +32,7 @@ export class Waypoint {
 })
 export class AppRoutingComponent implements OnInit {
 
-  public routeAdvice: Promise<RouteAdvice>
+  public routeAdvice: RouteAdvice;
   public waypointCount: number;
   public cities: Promise<any[]>;
   public waypoints: Promise<any[]>;
