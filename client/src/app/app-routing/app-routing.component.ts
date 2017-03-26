@@ -24,6 +24,7 @@ export class Waypoint {
 })
 export class AppRoutingComponent implements OnInit {
 
+  public waypointCount: number;
   public cities: Promise<any[]>;
   public waypoints: Promise<any[]>;
   public title: string;
@@ -44,6 +45,7 @@ export class AppRoutingComponent implements OnInit {
     this.title = "Routing Application";
   //  this.cities = this.cityService.getCities().then(cities => this.cities = cities);
     this.cities = this.cityService.getCities();
+    this.waypointCount = 0;
   }
 
   convert(waypoint: string) {
@@ -55,10 +57,16 @@ export class AppRoutingComponent implements OnInit {
     return city.longitude + "_" + city.latitude;
   }
 
+  reducePoints(w, index) {
+    return (index % 4) == 0;
+    // return (w.latitude * 10 * 13) % 7 === 0
+  }
+
+
   planRoute() {
     this.lat = this.model.startCity.latitude;
     this.lng = this.model.startCity.longitude;
-    this.waypoints = this.routeAdviceService.getRouteAdvice(this.convertCityToWaypoint(this.model.startCity), this.convertCityToWaypoint(this.model.endCity)).then(routeAdvice => routeAdvice.waypoints.map(w => this.convert(w)));
+    this.waypoints = this.routeAdviceService.getRouteAdvice(this.convertCityToWaypoint(this.model.startCity), this.convertCityToWaypoint(this.model.endCity)).then(routeAdvice => routeAdvice.waypoints.map(w => this.convert(w)).filter(this.reducePoints));
     //this.waypoints = Promise.resolve([{lat: '38.0', lng: '150.0'}, {lat: '47.0', lng: '-67.0'}]);
 
     console.log('Plan route with', this.convertCityToWaypoint(this.model.startCity), this.convertCityToWaypoint(this.model.endCity));
