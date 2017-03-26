@@ -11,14 +11,6 @@
       </md-grid-tile>
     </md-grid-list>
 </form>
-<!--<md-card *ngIf="showWaypoints">-->
-  <!--<md-card-title>Waypoints</md-card-title>-->
-  <!--<md-card-content>-->
-    <!--<md-list>-->
-      <!--<md-list-item *ngFor="let waypoint of waypoints | async">{{waypoint.longitude}}:{{waypoint.latitude}}</md-list-item>-->
-    <!--</md-list>-->
-  <!--</md-card-content>-->
-<!--</md-card>-->
 
 <sebm-google-map [latitude]="0" [longitude]="0" [zoom]="3">
   <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
