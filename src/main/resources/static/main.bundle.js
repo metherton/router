@@ -193,9 +193,7 @@ var AppRoutingComponent = (function () {
         return city.longitude + "_" + city.latitude;
     };
     AppRoutingComponent.prototype.reducePoints = function (w, index) {
-        //    return (index % 4) == 0;
-        return (index % index) == 0;
-        // return (w.latitude * 10 * 13) % 7 === 0
+        return (index % 4) == 0;
     };
     AppRoutingComponent.prototype.planRoute = function () {
         var _this = this;
@@ -438,7 +436,7 @@ module.exports = module.exports.toString();
 /***/ 641:
 /***/ (function(module, exports) {
 
-module.exports = "<form *ngIf=\"resetFormHack\" (ngSubmit)=\"planRoute()\" #routeForm=\"ngForm\">\n    <md-grid-list cols=\"8\">\n      <md-grid-tile>\n        <md-select id=\"start\" required [(ngModel)]=\"model.startCity\" name=\"startCity\" #startCitySpy #startCity=\"ngModel\" placeholder=\"Start\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city\">{{city.name}}</md-option></md-select>{{startCitySpy.className}}\n      </md-grid-tile>\n      <md-grid-tile>\n        <md-select id=\"end\" required [(ngModel)]=\"model.endCity\" name=\"endCity\" #endCitySpy #endCity=\"ngModel\"  placeholder=\"End\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city\">{{city.name}}</md-option></md-select>{{endCitySpy.className}}\n      </md-grid-tile>\n      <md-grid-tile>\n        <button md-raised-button [disabled]=\"!routeForm.form.valid || startCity.pristine  || endCity.pristine\" >Plan Route</button>\n      </md-grid-tile>\n    </md-grid-list>\n</form>\n\n<!--<md-card *ngIf=\"showWaypoints\">-->\n  <!--<md-card-title>Waypoints</md-card-title>-->\n  <!--<md-card-content>-->\n    <!--<md-list>-->\n      <!--<md-list-item *ngFor=\"let waypoint of waypoints | async\">{{waypoint.longitude}}:{{waypoint.latitude}}</md-list-item>-->\n    <!--</md-list>-->\n  <!--</md-card-content>-->\n<!--</md-card>-->\n\n<sebm-google-map [latitude]=\"0\" [longitude]=\"0\" [zoom]=\"3\">\n  <sebm-google-map-marker  *ngFor=\"let waypoint of waypoints | async\" [latitude]=\"waypoint.latitude\" [longitude]=\"waypoint.longitude\"></sebm-google-map-marker>\n  <!--<sebm-google-map-marker  *ngFor=\"let waypoint of waypoints | async\"  [latitude]=\"waypoint.latitude\" [longitude]=\"waypoint.longitude\"></sebm-google-map-marker>  -->\n</sebm-google-map>\n\n\n"
+module.exports = "<form *ngIf=\"resetFormHack\" (ngSubmit)=\"planRoute()\" #routeForm=\"ngForm\">\n    <md-grid-list cols=\"8\">\n      <md-grid-tile>\n        <md-select id=\"start\" required [(ngModel)]=\"model.startCity\" name=\"startCity\" #startCitySpy #startCity=\"ngModel\" placeholder=\"Start\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city\">{{city.name}}</md-option></md-select>{{startCitySpy.className}}\n      </md-grid-tile>\n      <md-grid-tile>\n        <md-select id=\"end\" required [(ngModel)]=\"model.endCity\" name=\"endCity\" #endCitySpy #endCity=\"ngModel\"  placeholder=\"End\"><md-option *ngFor=\"let city of cities | async\" [value]=\"city\">{{city.name}}</md-option></md-select>{{endCitySpy.className}}\n      </md-grid-tile>\n      <md-grid-tile>\n        <button md-raised-button [disabled]=\"!routeForm.form.valid || startCity.pristine  || endCity.pristine\" >Plan Route</button>\n      </md-grid-tile>\n    </md-grid-list>\n</form>\n\n<sebm-google-map [latitude]=\"0\" [longitude]=\"0\" [zoom]=\"3\">\n  <sebm-google-map-marker  *ngFor=\"let waypoint of waypoints | async\" [latitude]=\"waypoint.latitude\" [longitude]=\"waypoint.longitude\"></sebm-google-map-marker>\n  <!--<sebm-google-map-marker  *ngFor=\"let waypoint of waypoints | async\"  [latitude]=\"waypoint.latitude\" [longitude]=\"waypoint.longitude\"></sebm-google-map-marker>  -->\n</sebm-google-map>\n\n\n"
 
 /***/ }),
 

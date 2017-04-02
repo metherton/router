@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppRoutingComponent } from './app-routing.component';
+import { City } from './app-routing.component';
 import {CityService} from "../services/city.service";
 import {RouteAdviceService} from "../services/route-advice.service";
 
@@ -41,6 +42,9 @@ describe('App Routing Component', () => {
   });
 
   it('should make route advice request for begin and end cities', function() {
+
+    component.model.startCity = new City('New York', '40.0', '-73.5');
+    component.model.endCity = new City('Tokyo', '35.0', '139.5');
 
     component.planRoute();
 
