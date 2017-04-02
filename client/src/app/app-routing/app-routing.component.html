@@ -9,6 +9,9 @@
       <md-grid-tile>
         <button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button>
       </md-grid-tile>
+      <md-grid-tile>
+        <md-spinner *ngIf="showSpinner"></md-spinner>
+      </md-grid-tile>
     </md-grid-list>
 </form>
 

@@ -45,6 +45,7 @@ export class AppRoutingComponent implements OnInit {
   public showWaypoints: boolean;
   public lat: string;// = 51.678418;
   public lng: string; //= 7.809007;
+  public showSpinner;
 
   constructor(private cityService: CityService, private routeAdviceService: RouteAdviceService) { }
 
@@ -74,11 +75,14 @@ export class AppRoutingComponent implements OnInit {
   planRoute() {
     this.lat = this.model.startCity.latitude;
     this.lng = this.model.startCity.longitude;
+    this.showSpinner = true;
     this.waypoints = this.routeAdviceService.getRouteAdvice(this.convertCityToWaypoint(this.model.startCity), this.convertCityToWaypoint(this.model.endCity)).then(
       (routeAdvice) => {
         this.routeAdvice = routeAdvice;
+        this.showSpinner = false;
         return routeAdvice.waypoints.map(w => this.convert(w)).filter(this.reducePoints);
       }
+
     );
     //this.waypoints = Promise.resolve([{lat: '38.0', lng: '150.0'}, {lat: '47.0', lng: '-67.0'}]);
 
