@@ -6,9 +6,9 @@ import 'rxjs/add/operator/toPromise';
 export class RouteAdviceService {
 
   constructor(private http: Http) { }
-  
+
   getRouteAdvice(start: any, end: any): Promise<any> {
-    return this.http.get(`http://localhost:8080/routeAdvices/` + start + `/` + end).toPromise().then(response => response.json());
+    return this.http.get(`http://141.138.139.81:8080/routeAdvices/` + start + `/` + end).toPromise().then(response => response.json());
   }
 
 
