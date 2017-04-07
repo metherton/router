@@ -67,7 +67,6 @@
         <dependency>
             <groupId>com.martinetherton</groupId>
             <artifactId>optimizer</artifactId>
-            <version>1.0.0</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/optimizer.jar</systemPath>
         </dependency>
@@ -75,7 +74,6 @@
         <dependency>
             <groupId>com.martinetherton</groupId>
             <artifactId>aima-core</artifactId>
-            <version>1.0.0</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/aima-core-bmt-1.0.jar</systemPath>
         </dependency>
