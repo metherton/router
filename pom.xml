@@ -69,7 +69,7 @@
             <artifactId>optimizer</artifactId>
             <version>1.0.0</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/src/main/resources/optimizer.jar</systemPath>
+			<systemPath>${project.basedir}/src/main/resources/optimizer.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -77,7 +77,7 @@
             <artifactId>aima-core</artifactId>
             <version>1.0.0</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/src/main/resources/aima-core-bmt-1.0.jar</systemPath>
+			<systemPath>${project.basedir}/src/main/resources/aima-core-bmt-1.0.jar</systemPath>
         </dependency>
 
 	</dependencies>
