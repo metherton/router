@@ -8,4 +8,4 @@ COPY pom.xml /home/root/router/pom.xml
 RUN apt-get update && apt-get install -y maven
 RUN mvn package
 
-ENTRYPOINT ["java", "-cp", "target/router-0.0.1-SNAPSHOT.jar:src/main/resources/*:*", "main.com.martinetherton.RouterApplication"]
+ENTRYPOINT ["java", "-cp", "target/router-0.0.1-SNAPSHOT.jar:src/main/resources/*:*", "com.martinetherton.RouterApplication"]
