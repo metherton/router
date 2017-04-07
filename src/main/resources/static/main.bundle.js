@@ -65,7 +65,7 @@ var RouteAdviceService = (function () {
         this.http = http;
     }
     RouteAdviceService.prototype.getRouteAdvice = function (start, end) {
-        return this.http.get("http://localhost:8080/routeAdvices/" + start + "/" + end).toPromise().then(function (response) { return response.json(); });
+        return this.http.get("/routeAdvices/" + start + "/" + end).toPromise().then(function (response) { return response.json(); });
     };
     RouteAdviceService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
