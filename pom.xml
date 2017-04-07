@@ -68,12 +68,14 @@
             <groupId>com.martinetherton</groupId>
             <artifactId>optimizer</artifactId>
             <version>1.0.0</version>
+			<systemPath>${basedir}/lib/optimizer.jar</systemPath>
         </dependency>
 
         <dependency>
             <groupId>com.martinetherton</groupId>
             <artifactId>aima-core</artifactId>
             <version>1.0.0</version>
+			<systemPath>${basedir}/lib/aima-core-bmt-1.0.jar</systemPath>
         </dependency>
 
 	</dependencies>
