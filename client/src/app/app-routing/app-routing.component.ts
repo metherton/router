@@ -69,7 +69,7 @@ export class AppRoutingComponent implements OnInit {
 
   reducePoints(w, index) {
      return (index % 4) == 0;
-  }
+  } 
 
 
   planRoute() {
