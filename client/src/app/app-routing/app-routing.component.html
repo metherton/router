@@ -1,23 +1,18 @@
-<form *ngIf="resetFormHack" (ngSubmit)="planRoute()" #routeForm="ngForm">
-    <md-grid-list cols="8">
-      <md-grid-tile>
-        <md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{startCitySpy.className}}
-      </md-grid-tile>
-      <md-grid-tile>
-        <md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{endCitySpy.className}}
-      </md-grid-tile>
-      <md-grid-tile>
-        <button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button>
-      </md-grid-tile>
-      <md-grid-tile>
-        <md-spinner *ngIf="showSpinner"></md-spinner>
-      </md-grid-tile>
-    </md-grid-list>
-</form>
+<md-toolbar color="primary">Martin's Routing Application</md-toolbar>
+<md-card>
+  <md-card-header>
+    <form *ngIf="resetFormHack" (ngSubmit)="planRoute()" #routeForm="ngForm">
+      <md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{startCitySpy.className}}
+      <md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{endCitySpy.className}}
+      <button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button>
+      <md-spinner *ngIf="showSpinner"></md-spinner>
+    </form>
+  </md-card-header>
+  <md-card-content>
+    <sebm-google-map [latitude]="0" [longitude]="0" [zoom]="3">
+      <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
+      <!--<sebm-google-map-marker  *ngFor="let waypoint of waypoints | async"  [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>  -->
+    </sebm-google-map>
+  </md-card-content>
 
-<sebm-google-map [latitude]="0" [longitude]="0" [zoom]="3">
-  <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
-  <!--<sebm-google-map-marker  *ngFor="let waypoint of waypoints | async"  [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>  -->
-</sebm-google-map>
-
-
+</md-card>
