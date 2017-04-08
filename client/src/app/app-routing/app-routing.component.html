@@ -19,7 +19,7 @@
   </md-toolbar>
   <md-card class="divmap">
     <sebm-google-map [latitude]="0" [longitude]="0" [zoom]="3">
-      <sebm-google-map-marker iconUrl="images/dot.png" *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude - 3.23" [longitude]="waypoint.longitude"></sebm-google-map-marker>
+      <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
     </sebm-google-map>
   </md-card>
 </md-sidenav-container>

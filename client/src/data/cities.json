@@ -3,8 +3,8 @@
   {"name": "Hong Kong", "latitude": "22.0", "longitude": "114.5"},
   {"name": "Long Island", "latitude": "40.0", "longitude": "-72.0"},
   {"name": "New York", "latitude": "40.0", "longitude": "-73.5"},
+  {"name": "Plymouth", "latitude": "50.0", "longitude": "-4.0"},
   {"name": "Rio de Janeiro", "latitude": "-23.5", "longitude": "-43.0"},
-  {"name": "Southampton", "latitude": "50.5", "longitude": "-1.5"},
   {"name": "Sydney", "latitude": "-34.0", "longitude": "151.5"},
   {"name": "Tokyo", "latitude": "35.0", "longitude": "139.5"}
 ]
