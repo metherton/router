@@ -1,3 +1,60 @@
 .sebm-google-map-container {
   height: 500px;
 }
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.example-sidenav-fab-container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.example-sidenav-fab-container md-sidenav {
+  max-width: 200px;
+}
+
+.example-sidenav-fab-container .md-sidenav-content,
+.example-sidenav-fab-container md-sidenav {
+  display: flex;
+  overflow: visible;
+}
+
+.example-scrolling-content {
+  overflow: auto;
+
+}
+
+.divmap {
+
+}
+.green-spinner {
+  height: 50px;
+  width: 50px;
+  margin-left: 50px;
+}
+
+.example-fab {
+
+}

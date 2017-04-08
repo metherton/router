@@ -1,18 +1,25 @@
-<md-toolbar color="primary">Martin's Routing Application</md-toolbar>
-<md-card>
-  <md-card-header>
-    <form *ngIf="resetFormHack" (ngSubmit)="planRoute()" #routeForm="ngForm">
-      <md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{startCitySpy.className}}
-      <md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{endCitySpy.className}}
-      <button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button>
-      <md-spinner *ngIf="showSpinner"></md-spinner>
-    </form>
-  </md-card-header>
-  <md-card-content>
+<md-sidenav-container class="example-sidenav-fab-container">
+  <md-sidenav #sidenav mode="side" opened="false">
+    <md-card>
+      <form *ngIf="resetFormHack" (ngSubmit)="planRoute()" #routeForm="ngForm">
+        <p><md-select id="start" required [(ngModel)]="model.startCity" name="startCity" #startCitySpy #startCity="ngModel" placeholder="Start"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{startCitySpy.className}}</p>
+        <p><md-select id="end" required [(ngModel)]="model.endCity" name="endCity" #endCitySpy #endCity="ngModel"  placeholder="End"><md-option *ngFor="let city of cities | async" [value]="city">{{city.name}}</md-option></md-select>{{endCitySpy.className}}</p>
+        <p><button md-raised-button [disabled]="!routeForm.form.valid || startCity.pristine  || endCity.pristine" >Plan Route</button></p>
+      </form>
+    </md-card>
+    <div class="example-scrolling-content">
+      <h4>Waypoints</h4>
+      <md-spinner color="accent" class="green-spinner" *ngIf="showSpinner"></md-spinner>
+      <p *ngFor="let waypoint of waypoints | async">Lat:&nbsp;{{waypoint.latitude}}&nbsp;Long:&nbsp;{{waypoint.longitude}}</p>
+    </div>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-mini-fab class="example-fab" (click)="sidenav.toggle()"><md-icon>+</md-icon></button>&nbsp;&nbsp;
+    Martin's Routing Application<md-spinner color="accent" class="green-spinner" *ngIf="showSpinner"></md-spinner>
+  </md-toolbar>
+  <md-card class="divmap">
     <sebm-google-map [latitude]="0" [longitude]="0" [zoom]="3">
-      <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
-      <!--<sebm-google-map-marker  *ngFor="let waypoint of waypoints | async"  [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>  -->
+      <sebm-google-map-marker *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
     </sebm-google-map>
-  </md-card-content>
-
-</md-card>
+  </md-card>
+</md-sidenav-container>
