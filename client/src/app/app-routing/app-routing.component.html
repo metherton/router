@@ -10,7 +10,7 @@
     <div class="example-scrolling-content">
       <h4>Waypoints</h4>
       <md-spinner color="accent" class="green-spinner" *ngIf="showSpinner"></md-spinner>
-      <p *ngFor="let waypoint of realWaypoints | async">Lat:&nbsp;{{waypoint.latitude}}&nbsp;Long:&nbsp;{{waypoint.longitude}}</p>
+      <p *ngFor="let waypoint of waypoints | async">Lat:&nbsp;{{waypoint.latitude}}&nbsp;Long:&nbsp;{{waypoint.longitude}}</p>
     </div>
   </md-sidenav>
   <md-toolbar color="primary">
@@ -19,7 +19,7 @@
   </md-toolbar>
   <md-card class="divmap">
     <sebm-google-map [latitude]="0" [longitude]="0" [zoom]="3">
-      <sebm-google-map-marker  *ngFor="let waypoint of realWaypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
+      <sebm-google-map-marker  *ngFor="let waypoint of waypoints | async" [latitude]="waypoint.latitude" [longitude]="waypoint.longitude"></sebm-google-map-marker>
     </sebm-google-map>
   </md-card>
 </md-sidenav-container>
