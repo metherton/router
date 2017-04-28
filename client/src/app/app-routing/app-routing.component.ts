@@ -69,7 +69,7 @@ export class AppRoutingComponent implements OnInit {
 
   reducePoints(w, index) {
      return (index % 4) == 0;
-  } 
+  }
 
 
   planRoute() {
@@ -80,7 +80,8 @@ export class AppRoutingComponent implements OnInit {
       (routeAdvice) => {
         this.routeAdvice = routeAdvice;
         this.showSpinner = false;
-        return routeAdvice.waypoints.map(w => this.convert(w)).filter(this.reducePoints);
+       // return routeAdvice.waypoints.map(w => this.convert(w)).filter(this.reducePoints);
+        return routeAdvice.waypoints.map(w => this.convert(w));
       }
 
     );
