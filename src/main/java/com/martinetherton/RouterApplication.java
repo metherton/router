@@ -5,10 +5,14 @@ import com.bmtargoss.semafors.optimizer.domain.OptimalRouteAdviceRequest;
 import com.bmtargoss.semafors.optimizer.domain.OptimizerServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +35,16 @@ public class RouterApplication {
         OptimalRouteAdviceRequest optimalRouteAdviceRequest = new OptimalRouteAdviceRequest(start, destination);
         OptimalRouteAdvice optimalRouteAdvice = (new OptimizerServiceImpl()).findRouteAdviceFor(optimalRouteAdviceRequest);
         return (new RouteAdviceConverter(optimalRouteAdvice)).getRouteAdvice();
+    }
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/routeAdvices/**").allowedOrigins("*");
+            }
+        };
     }
 
 	public static void main(String[] args) {

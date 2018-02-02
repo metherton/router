@@ -31,7 +31,7 @@ export class Waypoint {
   styleUrls: ['./app-routing.component.css']
 })
 export class AppRoutingComponent implements OnInit {
-
+  
   public routeAdvice: RouteAdvice;
   public waypointCount: number;
   public cities: Promise<any[]>;
