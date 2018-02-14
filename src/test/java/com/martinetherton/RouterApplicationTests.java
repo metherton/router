@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -33,6 +34,7 @@ public class RouterApplicationTests {
 
 	@Test
 	public void shouldReturn200Ok() throws Exception {
+		ResultActions bla = mockMvc.perform(get("/routeAdvices/44.5_-36.0/106.0_-17.5"));
 		mockMvc.perform(get("/routeAdvices/44.5_-36.0/106.0_-17.5")).andExpect(status().isOk());
 	}
 
