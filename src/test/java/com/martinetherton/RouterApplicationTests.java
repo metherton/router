@@ -35,7 +35,7 @@ public class RouterApplicationTests {
 	@Test
 	public void shouldReturn200Ok() throws Exception {
 		ResultActions bla = mockMvc.perform(get("/routeAdvices/44.5_-36.0/106.0_-17.5"));
-		mockMvc.perform(get("/routeAdvices/44.5_-36.0/106.0_-17.5")).andExpect(status().isOk());
+			mockMvc.perform(get("/routeAdvices/44.5_-36.0/106.0_-17.5")).andExpect(status().isOk());
 	}
 
 }
