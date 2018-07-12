@@ -5,6 +5,7 @@ import com.bmtargoss.semafors.optimizer.domain.OptimalRouteAdviceRequest;
 import com.bmtargoss.semafors.optimizer.domain.OptimizerService;
 import com.bmtargoss.semafors.optimizer.domain.OptimizerServiceImpl;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class OptimizerImplTest {
     }
 
     @Test
+    @Ignore
     public void optimizerShouldReturnOptimalRouteAdvice() {
         OptimalRouteAdviceRequest optimalRouteAdviceRequest = new OptimalRouteAdviceRequest("44.5_-36.0", "106.0_-17.5");
         OptimalRouteAdvice optimalRouteAdvice = optimizer.findRouteAdviceFor(optimalRouteAdviceRequest);
