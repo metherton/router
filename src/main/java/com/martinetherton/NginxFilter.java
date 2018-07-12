@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by martin on 14/02/18.
  */
-//@WebFilter(filterName = "NginxFilter", urlPatterns = "/*")
+@WebFilter(filterName = "NginxFilter", urlPatterns = "/*")
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class NginxFilter implements Filter {
